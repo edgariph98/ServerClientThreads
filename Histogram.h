@@ -6,6 +6,7 @@
 #include <vector>
 #include <unordered_map>
 #include <pthread.h>
+#include <mutex>
 using namespace std;
 
 class Histogram {
@@ -13,6 +14,7 @@ private:
 	vector<int> hist;
 	int nbins;
 	double start, end;
+	mutex m;
 public:
     Histogram(int, double, double);
 	~Histogram();
